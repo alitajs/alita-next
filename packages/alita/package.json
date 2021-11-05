@@ -1,11 +1,11 @@
 {
-  "name": "xiaohuhu",
+  "name": "alita",
   "version": "0.0.0-alpha.1",
-  "description": "umi@4 playground",
+  "description": "v3 develop version",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "xiaohu": "bin/xiaohu.js"
+    "alita": "bin/alita.js"
   },
   "files": [
     "dist"
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alitajs/xiaohu"
+    "url": "https://github.com/alitajs/alita-next-step"
   },
   "authors": [
     "chenxiaocong <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)"
   ],
   "license": "MIT",
-  "bugs": "https://github.com/alitajs/xiaohu/issues",
-  "homepage": "https://github.com/alitajs/xiaohu/tree/master/packages/xiaohuhu#readme",
+  "bugs": "https://github.com/alitajs/alita-next/issues",
+  "homepage": "https://github.com/alitajs/alita-next/tree/master/packages/alita#readme",
   "publishConfig": {
     "access": "public"
   },
