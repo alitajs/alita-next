@@ -20,6 +20,7 @@ $ pnpm build
 $ cd examples/boilerplate
 $ pnpm dev
 ```
+
 ## LICENSE
 
 [MIT](./LICENSE)
