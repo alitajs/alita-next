@@ -11,22 +11,24 @@ export default (api: IApi) => {
   api.describe({
     key: 'aconsole',
     config: {
-      schema(joi) {
-        return joi.object({
-          inspx: joi.object({
-            disabled: joi.boolean(),
-            production: joi.boolean(),
-            margin: joi.boolean(),
-            size: joi.boolean(),
-            padding: joi.boolean(),
+      schema(Joi) {
+        return Joi.object({
+          inspx: Joi.object({
+            disabled: Joi.boolean(),
+            production: Joi.boolean(),
+            margin: Joi.boolean(),
+            size: Joi.boolean(),
+            padding: Joi.boolean(),
+            bottom: Joi.string(),
+            right: Joi.string(),
           }),
-          console: joi.object({
-            defaultPlugins: joi.array(),
-            onReady: joi.function(),
-            onClearLog: joi.function(),
-            maxLogNumber: joi.number(),
-            disableLogScrolling: joi.boolean(),
-            theme: joi.string(),
+          console: Joi.object({
+            defaultPlugins: Joi.array(),
+            onReady: Joi.function(),
+            onClearLog: Joi.function(),
+            maxLogNumber: Joi.number(),
+            disableLogScrolling: Joi.boolean(),
+            theme: Joi.string(),
           }),
         });
       },
