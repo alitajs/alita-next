@@ -9,6 +9,7 @@ importers:
       '@types/node': ^16.11.1
       '@types/resolve': ^1.20.1
       '@vercel/ncc': ^0.31.1
+      alita: workspace:*
       dts-packer: ^0.0.2
       esno: ^0.10.1
       jest: ^27.3.1
@@ -21,7 +22,6 @@ importers:
       ts-node: ^10.3.0
       typescript: ^4.5.0-beta
       uglify-js: ^3.14.2
-      xiaohuhu: workspace:*
       yorkie: ^2.0.0
       zx: ^4.2.0
     devDependencies:
@@ -30,6 +30,7 @@ importers:
       '@types/node': 16.11.6
       '@types/resolve': 1.20.1
       '@vercel/ncc': 0.31.1
+      alita: link:packages/alita
       dts-packer: 0.0.2
       esno: 0.10.1
       jest: 27.3.1_ts-node@10.4.0
@@ -42,14 +43,13 @@ importers:
       ts-node: 10.4.0_bb56a5dfe5eb7ce031f8aa06d9ce2411
       typescript: 4.5.0-dev.20211101
       uglify-js: 3.14.3
-      xiaohuhu: link:packages/xiaohuhu
       yorkie: 2.0.0
       zx: 4.2.0
 
   examples/boilerplate:
     specifiers: {}
 
-  packages/xiaohuhu:
+  packages/alita:
     specifiers:
       umi: link:/Users/xiaohuoni/umi-next/packages/umi
     dependencies:

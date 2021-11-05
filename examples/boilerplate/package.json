@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "dev": "xiaohu dev"
+    "dev": "alita dev"
   }
 }
