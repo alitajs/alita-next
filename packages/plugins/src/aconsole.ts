@@ -3,6 +3,8 @@ import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { IApi } from 'umi';
 
+const DIR_NAME = 'plugin-inspx';
+
 export default (api: IApi) => {
   const { userConfig } = api;
   const { aconsole = {} } = userConfig;
@@ -61,8 +63,6 @@ export default (api: IApi) => {
     (process.env.NODE_ENV === 'development' && aconsole?.inspx) ||
     (aconsole?.inspx && aconsole?.inspx?.production)
   ) {
-    // ios 摇一摇需要 https 环境。
-    // process.env.HTTPS = '1';
     // 生成临时文件
     api.onGenerateFiles({
       fn() {
@@ -72,7 +72,7 @@ export default (api: IApi) => {
           'utf-8',
         );
         api.writeTmpFile({
-          path: 'plugin-inspx/inspx.tsx',
+          path: `${DIR_NAME}/inspx.tsx`,
           content: Mustache.render(inspxTpl, {
             // inspxpath: join(__dirname,'..','compiled','@alita','inspx'),
             inspxpath: dirname(require.resolve('@alita/inspx/package')),
@@ -96,13 +96,13 @@ export default (api: IApi) => {
           'utf-8',
         );
         api.writeTmpFile({
-          path: 'plugin-inspx/runtime.tsx',
+          path: `${DIR_NAME}/runtime.tsx`,
           content: runtimeTpl,
         });
       },
     });
     api.addRuntimePlugin(() => [
-      join(api.paths.absTmpPath!, 'plugin-inspx/runtime.tsx'),
+      join(api.paths.absTmpPath!, `${DIR_NAME}/runtime.tsx`),
     ]);
   }
 };

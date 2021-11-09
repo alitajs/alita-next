@@ -3,13 +3,15 @@ export default {
   //   react: 'React',
   //   'react-dom': 'ReactDOM',
   // },
-  plugins: ['@alita/plugins/dist/aconsole'],
-  aconsole: {
-    console: {},
-    inspx: {},
-  },
+  plugins: ['@alita/plugins/dist/hd'],
+  // aconsole: {
+  //   console: {},
+  //   inspx: {},
+  // },
+  hd: {},
   chainWebpack(memo: any) {
     memo;
   },
+  favicon: '12',
   // fastRefresh: false,
 };

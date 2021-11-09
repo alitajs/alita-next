@@ -26,19 +26,22 @@
     "access": "public"
   },
   "devDependencies": {
+    "@alitajs/postcss-plugin-px2rem": "^0.0.1",
     "vconsole": "3.9.4"
   },
   "dependencies": {
+    "@alita/inspx": "0.0.2",
     "@umijs/utils": "link:/Users/xiaohuoni/umi-next/packages/utils",
-    "umi": "link:/Users/xiaohuoni/umi-next/packages/umi",
-    "@alita/inspx": "0.0.2"
+    "umi": "link:/Users/xiaohuoni/umi-next/packages/umi"
   },
   "compiledConfig": {
     "deps": [
-      "vconsole"
+      "vconsole",
+      "@alitajs/postcss-plugin-px2rem"
     ],
     "excludeDtsDeps": [
-      "vconsole"
+      "vconsole",
+      "@alitajs/postcss-plugin-px2rem"
     ]
   }
 }
