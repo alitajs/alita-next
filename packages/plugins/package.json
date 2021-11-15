@@ -30,9 +30,7 @@
     "vconsole": "3.9.4"
   },
   "dependencies": {
-    "@alita/inspx": "0.0.2",
-    "@umijs/utils": "link:/Users/xiaohuoni/umi-next/packages/utils",
-    "umi": "link:/Users/xiaohuoni/umi-next/packages/umi"
+    "@alita/inspx": "0.0.2"
   },
   "compiledConfig": {
     "deps": [
