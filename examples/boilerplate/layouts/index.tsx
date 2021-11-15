@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link, Outlet } from 'umi';
+import { Link } from 'umi';
+import { useKeepOutlets } from '../.umi/plugin-keepalive/context';
 
 export default function Layout() {
+  const keepOutlets = useKeepOutlets();
   return (
     <div>
       <h2>global layout</h2>
@@ -16,7 +18,7 @@ export default function Layout() {
           <Link to="/users/foo">/users/foo</Link>
         </li>
       </ul>
-      <Outlet />
+      {keepOutlets}
     </div>
   );
 }

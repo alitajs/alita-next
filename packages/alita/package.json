@@ -27,8 +27,5 @@
   "homepage": "https://github.com/alitajs/alita-next/tree/master/packages/alita#readme",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "umi": "link:/Users/xiaohuoni/umi-next/packages/umi"
   }
 }
