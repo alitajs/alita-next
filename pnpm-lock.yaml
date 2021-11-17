@@ -9,6 +9,7 @@ importers:
       '@types/react': ^17.0.33
       '@types/react-dom': ^17.0.10
       '@types/resolve': ^1.20.1
+      '@umijs/core': link:/Users/congxiaochen/Documents/umi-next/packages/core
       '@umijs/utils': link:/Users/congxiaochen/Documents/umi-next/packages/utils
       '@vercel/ncc': ^0.31.1
       alita: workspace:*
@@ -35,6 +36,7 @@ importers:
       '@types/react': 17.0.34
       '@types/react-dom': 17.0.11
       '@types/resolve': 1.20.1
+      '@umijs/core': link:../umi-next/packages/core
       '@umijs/utils': link:../umi-next/packages/utils
       '@vercel/ncc': 0.31.1
       alita: link:packages/alita

@@ -21,8 +21,8 @@ const isKeepPath = (aliveList: any[], path: string) => {
 }
 
 export function useKeepOutlets() {
-    const location = useLocation()
-    const element = useOutlet()
+    const location = useLocation();
+    const element = useOutlet();
     const { keepElements, keepalive } = React.useContext<any>(KeepAliveContext);
     const isKeep = isKeepPath(keepalive, location.pathname);
     if (isKeep) {
@@ -31,7 +31,7 @@ export function useKeepOutlets() {
     return <>
         {
             Object.entries(keepElements.current).map(([pathname, element]: any) => (
-                <div key={pathname} style={ { height: '100%', width: '100%', position: 'relative', overflow: 'hidden auto' } } hidden={!matchPath(location.pathname, pathname)}>
+                <div key={pathname} style={ { height: '100%', width: '100%', position: 'relative', overflow: 'hidden auto' } } className="rumtime-keep-alive-layout" hidden={!matchPath(location.pathname, pathname)}>
                     {element}
                 </div>
             ))
