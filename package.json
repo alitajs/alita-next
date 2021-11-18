@@ -18,6 +18,7 @@
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@types/resolve": "^1.20.1",
+    "@types/rimraf": "3.0.2",
     "@vercel/ncc": "^0.31.1",
     "@umijs/utils": "link:/Users/congxiaochen/Documents/umi-next/packages/utils",
     "@umijs/core": "link:/Users/congxiaochen/Documents/umi-next/packages/core",

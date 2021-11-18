@@ -39,7 +39,7 @@ import { assert, eachPkg, getPkgs } from './utils';
   logger.event('check npm ownership');
   const whoami = (await $`npm whoami`).stdout.trim();
   await Promise.all(
-    ['umi', 'bigfish', '@umijs/core'].map(async (pkg) => {
+    ['alita'].map(async (pkg) => {
       const owners = (await $`npm owner ls ${pkg}`).stdout
         .trim()
         .split('\n')
@@ -88,7 +88,7 @@ import { assert, eachPkg, getPkgs } from './utils';
 
   // npm publish
   logger.event('pnpm publish');
-  const innerPkgs = pkgs.filter((pkg) => !['umi', 'bigfish'].includes(pkg));
+  const innerPkgs = pkgs.filter((pkg) => !['alita'].includes(pkg));
   const tag =
     version.includes('-alpha.') ||
     version.includes('-beta.') ||
@@ -100,8 +100,7 @@ import { assert, eachPkg, getPkgs } from './utils';
       await $`cd packages/${pkg} && npm publish --tag ${tag}`;
     }),
   );
-  await $`cd packages/umi && npm publish --tag ${tag}`;
-  await $`cd packages/bigfish && npm publish --tag ${tag}`;
+  await $`cd packages/alita && npm publish --tag ${tag}`;
 
   // sync tnpm
   logger.event('sync tnpm');

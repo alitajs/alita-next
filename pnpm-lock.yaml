@@ -9,6 +9,7 @@ importers:
       '@types/react': ^17.0.33
       '@types/react-dom': ^17.0.10
       '@types/resolve': ^1.20.1
+      '@types/rimraf': 3.0.2
       '@umijs/core': link:/Users/congxiaochen/Documents/umi-next/packages/core
       '@umijs/utils': link:/Users/congxiaochen/Documents/umi-next/packages/utils
       '@vercel/ncc': ^0.31.1
@@ -36,6 +37,7 @@ importers:
       '@types/react': 17.0.34
       '@types/react-dom': 17.0.11
       '@types/resolve': 1.20.1
+      '@types/rimraf': 3.0.2
       '@umijs/core': link:../umi-next/packages/core
       '@umijs/utils': link:../umi-next/packages/utils
       '@vercel/ncc': 0.31.1
@@ -65,6 +67,9 @@ importers:
       '@alita/plugins': link:../../packages/plugins
 
   packages/alita:
+    specifiers: {}
+
+  packages/native:
     specifiers: {}
 
   packages/plugins:
@@ -1710,6 +1715,13 @@ packages:
       '@types/node': 16.11.6
     dev: true
 
+  /@types/glob/7.2.0:
+    resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
+    dependencies:
+      '@types/minimatch': 3.0.5
+      '@types/node': 16.11.6
+    dev: true
+
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
@@ -1805,6 +1817,13 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
+      '@types/node': 16.11.6
+    dev: true
+
+  /@types/rimraf/3.0.2:
+    resolution: {integrity: sha512-F3OznnSLAUxFrCEu/L5PY8+ny8DtcFRjx7fZZ9bycvXRi3KPTRS9HOitGZwvPg0juRhXFWIeKX58cnX5YqLohQ==}
+    dependencies:
+      '@types/glob': 7.2.0
       '@types/node': 16.11.6
     dev: true
 

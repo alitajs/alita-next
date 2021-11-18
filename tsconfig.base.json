@@ -12,9 +12,7 @@
     "target": "esnext",
     "jsx": "react",
     "paths": {
-      "umi": ["./packages/umi"],
-      "@umijs/utils": ["./packages/utils"],
-      "@umijs/renderer-react": ["./packages/renderer-react"]
+      "alita": ["./packages/alita"]
     }
   },
   "exclude": [

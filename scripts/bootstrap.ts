@@ -16,10 +16,10 @@ import 'zx/globals';
   }
 
   function getName(pkgName: string) {
-    if (['umi'].includes(pkgName)) {
+    if (['alita'].includes(pkgName)) {
       return pkgName;
     } else {
-      return `@umijs/${pkgName}`;
+      return `@alita/${pkgName}`;
     }
   }
 
@@ -29,7 +29,7 @@ import 'zx/globals';
 
   function setExcludeFolder(opts: any) {
     if (!fs.existsSync(path.join(root, '.idea'))) return;
-    const configPath = path.join(root, '.idea', 'umi-next.iml');
+    const configPath = path.join(root, '.idea', 'a li ta-next.iml');
     let content = fs.readFileSync(configPath, 'utf-8');
     const folders = ['dist', 'compiled'];
     for (const folder of folders) {
@@ -74,14 +74,14 @@ import 'zx/globals';
             },
             repository: {
               type: 'git',
-              url: 'https://github.com/umijs/umi-next',
+              url: 'https://github.com/alitajs/alita-next',
             },
             authors: [
-              'chencheng <sorrycc@gmail.com> (https://github.com/sorrycc)',
+              'xiaohuoni <xiaohuoni@gmail.com> (https://github.com/xiaohuoni)',
             ],
             license: 'MIT',
-            bugs: 'https://github.com/umijs/umi-next/issues',
-            homepage: `https://github.com/umijs/umi-next/tree/master/packages/${opts.pkg}#readme`,
+            bugs: 'https://github.com/alitajs/alita-next/issues',
+            homepage: `https://github.com/alitajs/alita-next/tree/master/packages/${opts.pkg}#readme`,
             publishConfig: {
               access: 'public',
             },
@@ -107,7 +107,7 @@ import 'zx/globals';
       // README.md
       await fs.writeFile(
         path.join(pkgDir, 'README.md'),
-        `# ${name}\n\nSee our website [umijs](https://umijs.org) for more information.`,
+        `# ${name}\n\nSee our website [alitajs](https://alitajs.com) for more information.`,
         'utf-8',
       );
 
