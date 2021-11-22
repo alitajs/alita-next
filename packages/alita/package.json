@@ -27,5 +27,9 @@
   "homepage": "https://github.com/alitajs/alita-next/tree/master/packages/alita#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@umijs/preset-umi": "^4.0.0-beta.6",
+    "v8-compile-cache": "^2.3.0"
   }
 }

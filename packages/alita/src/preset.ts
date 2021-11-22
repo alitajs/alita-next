@@ -5,6 +5,10 @@ export default (api: IApi) => {
     console.log('hello alita');
   });
   return {
-    plugins: [require.resolve('./features/config/config')],
+    plugins: [
+      require.resolve('./features/config/config'),
+      require.resolve('./features/config/apptype'),
+      require.resolve('./commands/version'),
+    ],
   };
 };
