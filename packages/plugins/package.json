@@ -30,7 +30,10 @@
     "vconsole": "3.9.4"
   },
   "dependencies": {
-    "@alita/inspx": "0.0.2"
+    "@alita/inspx": "0.0.2",
+    "antd-mobile": "2.3.2",
+    "antd-mobile5": "npm:antd-mobile@next",
+    "babel-plugin-import": "^1.13.3"
   },
   "compiledConfig": {
     "deps": [

@@ -28,7 +28,11 @@ export async function run(opts: IOpts = {}) {
   } else if (command === 'build') {
     process.env.NODE_ENV = 'production';
   }
-  opts.presets = opts?.presets ?? [require.resolve('./preset')];
+  // TODO: @alita/plugin dev ,remove require.resolve('@alita/plugins')
+  opts.presets = opts?.presets ?? [
+    require.resolve('./preset'),
+    require.resolve('@alita/plugins'),
+  ];
   if (opts?.presets) {
     process.env.UMI_PRESETS = opts.presets.join(',');
   }
