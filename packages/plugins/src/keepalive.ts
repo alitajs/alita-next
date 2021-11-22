@@ -1,4 +1,4 @@
-import { Mustache } from '@umijs/utils';
+import { logger, Mustache } from '@umijs/utils';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { IApi } from 'umi';
@@ -10,6 +10,8 @@ const DIR_NAME = 'plugin-keepalive';
 // dropByCacheKey('/list');
 type KeepAliveType = (string | RegExp)[];
 export default (api: IApi) => {
+  logger.info('Using KeepAlive Plugin');
+
   api.describe({
     key: 'keepalive',
     config: {

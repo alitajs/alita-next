@@ -1,4 +1,4 @@
-import { Mustache } from '@umijs/utils';
+import { logger, Mustache } from '@umijs/utils';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { IApi } from 'umi';
@@ -6,6 +6,8 @@ import { IApi } from 'umi';
 const DIR_NAME = 'plugin-inspx';
 
 export default (api: IApi) => {
+  logger.info('Using AConsole Plugin');
+
   const { userConfig } = api;
   const { aconsole = {} } = userConfig;
 

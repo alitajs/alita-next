@@ -1,4 +1,4 @@
-import { Mustache } from '@umijs/utils';
+import { logger, Mustache } from '@umijs/utils';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { IApi } from 'umi';
@@ -9,6 +9,8 @@ import getFile from './utils/getFile/getFile';
 const DIR_NAME = 'plugin-hd';
 
 export default (api: IApi) => {
+  logger.info('Using HD Plugin');
+
   api.describe({
     key: 'hd',
     config: {
