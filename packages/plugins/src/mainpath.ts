@@ -3,7 +3,7 @@ import { IApi } from 'umi';
 // import resetMainPath from './utils/resetMainPath/resetMainPath';
 
 export default (api: IApi) => {
-  logger.info('Using KeepAlive Plugin');
+  logger.info('Using Main Path Plugin');
 
   api.describe({
     key: 'mainPath',

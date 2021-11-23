@@ -1,5 +1,5 @@
 {
-  "name": "antd-mobile5",
+  "name": "{{{ antdMobile }}}",
   "version": "1.0.0",
   "description": "",
   "main": "",

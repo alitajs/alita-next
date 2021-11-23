@@ -1,5 +1,6 @@
-import { logger, resolve, winPath } from '@umijs/utils';
-import { dirname } from 'path';
+import { BaseGenerator, logger, resolve, winPath } from '@umijs/utils';
+import { existsSync } from 'fs';
+import { dirname, join } from 'path';
 import { IApi } from 'umi';
 
 export default (api: IApi) => {
@@ -13,7 +14,7 @@ export default (api: IApi) => {
     },
   });
   // 优先使用用户安装
-  api.chainWebpack((memo) => {
+  api.chainWebpack(async (memo) => {
     function getUserLibDir({ library }: { library: string }) {
       if (
         // @ts-ignore
@@ -36,11 +37,33 @@ export default (api: IApi) => {
       }
       return null;
     }
+
     if (!!api.config.antdMobile) {
+      const userlibDir = getUserLibDir({ library: 'antd-mobile' });
+      if (!userlibDir) {
+        if (
+          !existsSync(
+            `${api.paths.absNodeModulesPath}/@types/antd-mobile/index.d.ts`,
+          )
+        ) {
+          logger.event('Create @types/antd-mobile Package');
+          const generator = new BaseGenerator({
+            path: join(__dirname, '..', 'templates', 'alias'),
+            target: `${api.paths.absNodeModulesPath}/@types/antd-mobile`,
+            data: {
+              antdMobilePath: join(
+                dirname(require.resolve('antd-mobile/package.json')),
+              ),
+              antdMobile: 'antd-mobile',
+            },
+            questions: [],
+          });
+          await generator.run();
+        }
+      }
       memo.resolve.alias.set(
         'antd-mobile',
-        getUserLibDir({ library: 'antd-mobile' }) ||
-          dirname(require.resolve('antd-mobile/package.json')),
+        userlibDir || dirname(require.resolve('antd-mobile/package.json')),
       );
     }
     return memo;
@@ -62,7 +85,4 @@ export default (api: IApi) => {
     }
     return [];
   });
-
-  // TODO: hold umi@4 low import
-  // 找不到模块“antd-mobile”或其相应的类型声明。
 };

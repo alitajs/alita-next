@@ -9,6 +9,7 @@ export default (api: IApi) => {
     plugins: [
       require.resolve('./aconsole'),
       require.resolve('./antdmobile'),
+      require.resolve('./antdmobile5'),
       require.resolve('./hd'),
       require.resolve('./keepalive'),
       require.resolve('./mainpath'),
