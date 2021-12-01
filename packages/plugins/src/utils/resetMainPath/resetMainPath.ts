@@ -1,4 +1,4 @@
-export default function resetMainPath(routes: any[], mainPath: string) {
+export default function resetMainPath(routes: any, mainPath: string) {
   let newPath = mainPath;
   // 把用户输入/abc/ 转成 /abc
   if (newPath !== '/' && newPath.slice(-1) === '/') {
@@ -8,11 +8,14 @@ export default function resetMainPath(routes: any[], mainPath: string) {
   if (newPath !== '/' && newPath.slice(0, 1) !== '/') {
     newPath = `/${newPath}`;
   }
-  return routes.map((element) => {
-    if (element.isResetMainEdit) {
-      return element;
+
+  const obj = {} as any;
+  Object.entries(routes).forEach(([pathname, element]: any) => {
+    if (element.isResetMainEdit || pathname === '@@/global-layout') {
+      obj[pathname] = element;
+      return ;
     }
-    if (element.path === '/' && !element.routes) {
+    if (element.path === '/') {
       element.path = '/index';
       element.isResetMainEdit = true;
     }
@@ -20,9 +23,7 @@ export default function resetMainPath(routes: any[], mainPath: string) {
       element.path = '/';
       element.isResetMainEdit = true;
     }
-    if (Array.isArray(element.routes)) {
-      element.routes = resetMainPath(element.routes, mainPath);
-    }
-    return element;
+    obj[pathname] = element;
   });
+  return obj;
 }
