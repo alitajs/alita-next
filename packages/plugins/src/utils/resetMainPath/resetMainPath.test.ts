@@ -2,38 +2,56 @@ import resetMainPath from './resetMainPath';
 
 test('resetMainPath', () => {
   const routes = {
-    '1': { path: '/', file: 'index', parentId: '@@/global-layout', id: '1' },
-    '2': { path: '/home', file: 'home', parentId: '@@/global-layout', id: '2' },
-    '3': { path: '/abc', file: 'abc', parentId: '@@/global-layout', id: '3' },
+    index: {
+      path: '/',
+      id: 'index',
+      parentId: '@@/global-layout',
+      file: 'index.tsx',
+    },
+    users: {
+      path: 'users',
+      id: 'users',
+      parentId: '@@/global-layout',
+      file: 'users.tsx',
+    },
+    'users/foo': {
+      path: 'foo',
+      id: 'users/foo',
+      parentId: 'users',
+      file: 'users/foo.tsx',
+    },
     '@@/global-layout': {
       id: '@@/global-layout',
       path: '/',
       file:
-        '/Users/chenshuhang/Documents/git/open/umi4/umi-next/examples/ant-design-pro/src/layouts/index.tsx',
+        '/Users/chenshuhang/Documents/git/alita/alita3/examples/boilerplate/layouts/index.tsx',
     },
   };
-  const mainPath = '/home';
+  const mainPath = '/users';
   expect(resetMainPath(routes, mainPath)).toEqual({
-    '1': {
-      path: '/index',
-      file: 'index',
+    index: {
+      path: 'index',
+      id: 'index',
       parentId: '@@/global-layout',
-      id: '1',
-      isResetMainEdit: true
+      file: 'index.tsx',
     },
-    '2': {
+    users: {
       path: '/',
-      file: 'home',
+      id: 'users',
       parentId: '@@/global-layout',
-      id: '2',
-      isResetMainEdit: true
+      file: 'users.tsx',
     },
-    '3': { path: '/abc', file: 'abc', parentId: '@@/global-layout', id: '3' },
+    'users/foo': {
+      path: 'foo',
+      id: 'users/foo',
+      parentId: 'users',
+      file: 'users/foo.tsx',
+    },
     '@@/global-layout': {
       id: '@@/global-layout',
       path: '/',
       file:
-        '/Users/chenshuhang/Documents/git/open/umi4/umi-next/examples/ant-design-pro/src/layouts/index.tsx',
-    }
+        '/Users/chenshuhang/Documents/git/alita/alita3/examples/boilerplate/layouts/index.tsx',
+    },
   });
 });
