@@ -1,8 +1,7 @@
 import { dirname, join } from 'path';
 import semver from 'semver';
-import { IApi, utils } from 'umi';
-
-const { winPath, resolve } = utils;
+import { IApi } from 'umi';
+import { logger, winPath, resolve } from '@umijs/utils';
 
 const checkAntdMobile = (api: IApi) => {
   if (
@@ -18,7 +17,7 @@ const checkAntdMobile = (api: IApi) => {
     try {
       version =
         require(`${api.paths.absNodeModulesPath}/antd-mobile/package.json`).version;
-    } catch (error) {}
+    } catch (error) { }
     return [semver.lt('5.0.0-alpha.0', version), true];
   }
   // 用户没有安装
@@ -34,6 +33,8 @@ const checkAntdMobile = (api: IApi) => {
  */
 export default (api: IApi) => {
   const [isAntdMobile5, hasDeps] = checkAntdMobile(api);
+  logger.info('Using Antd Mobile Plugin');
+
   api.describe({
     key: 'hd',
     config: {
@@ -92,7 +93,7 @@ export default (api: IApi) => {
     memo.resolve.alias.set(
       'antd-mobile-v2',
       getUserLibDir({ library: 'antd-mobile-v2' }) ||
-        dirname(require.resolve('antd-mobile-v2/package.json')),
+      dirname(require.resolve('antd-mobile-v2/package.json')),
     );
     //如果项目中安装的是 antd-mobile@5 优先使用用户项目中安装的 antd-mobile，否则忽略用户安装，强制指定 mobile@5 版本
     memo.resolve.alias.set(
@@ -104,8 +105,8 @@ export default (api: IApi) => {
           dirname(
             hasDeps
               ? resolve.sync(`antd-mobile/package.json`, {
-                  basedir: api.paths.cwd,
-                })
+                basedir: api.paths.cwd,
+              })
               : require.resolve('antd-mobile/package.json'),
           ),
           isAntdMobile5 && api.userConfig.hd ? '2x' : '',
