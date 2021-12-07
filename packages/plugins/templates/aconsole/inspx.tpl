@@ -8,6 +8,7 @@ const imgStyle = {
   height: '45px',
   borderRadius: '50%',
   position: 'fixed',
+  zIndex: '999',
   bottom: '{{{inspx.bottom}}}',
   right: '{{{inspx.right}}}'
 }

@@ -1,4 +1,4 @@
-import { logger, Mustache } from '@umijs/utils';
+import { logger, Mustache, winPath } from '@umijs/utils';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { IApi } from 'umi';
@@ -77,7 +77,9 @@ export default (api: IApi) => {
           path: `${DIR_NAME}/inspx.tsx`,
           content: Mustache.render(inspxTpl, {
             // inspxpath: join(__dirname,'..','compiled','@alita','inspx'),
-            inspxpath: dirname(require.resolve('@alita/inspx/package')),
+            inspxpath: winPath(
+              dirname(require.resolve('@alita/inspx/package')),
+            ),
             inspx: {
               ...{
                 disabled: false,
