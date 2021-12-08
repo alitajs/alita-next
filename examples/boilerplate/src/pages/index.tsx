@@ -12,7 +12,7 @@ export default function HomePage() {
   console.log(data);
   return (
     <div className={styles.title}>
-      {JSON.stringify(data)}
+      {loading ? 'Loading....' : JSON.stringify(data)}
       <Button type="button" color="primary" fill="solid" block size="large">
         123
       </Button>
