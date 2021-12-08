@@ -27,13 +27,15 @@
   },
   "devDependencies": {
     "@alitajs/postcss-plugin-px2rem": "^0.0.1",
+    "@types/semver": "^7.3.9",
     "vconsole": "3.9.4"
   },
   "dependencies": {
     "@alita/inspx": "0.0.2",
-    "antd-mobile": "2.3.2",
-    "antd-mobile5": "npm:antd-mobile-hd@5.0.0-beta.31",
-    "babel-plugin-import": "^1.13.3"
+    "antd-mobile": "5.0.0-rc.2",
+    "antd-mobile-v2": "2.3.4",
+    "babel-plugin-import": "^1.13.3",
+    "semver": "7.3.5"
   },
   "compiledConfig": {
     "deps": [

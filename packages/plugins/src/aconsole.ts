@@ -75,6 +75,7 @@ export default (api: IApi) => {
         );
         api.writeTmpFile({
           path: `${DIR_NAME}/inspx.tsx`,
+          noPluginDir: true,
           content: Mustache.render(inspxTpl, {
             // inspxpath: join(__dirname,'..','compiled','@alita','inspx'),
             inspxpath: winPath(
@@ -101,6 +102,7 @@ export default (api: IApi) => {
         );
         api.writeTmpFile({
           path: `${DIR_NAME}/runtime.tsx`,
+          noPluginDir: true,
           content: runtimeTpl,
         });
       },

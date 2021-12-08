@@ -36,6 +36,7 @@ export default (api: IApi) => {
     );
     api.writeTmpFile({
       path: `${DIR_NAME}/context.tsx`,
+      noPluginDir: true,
       content: Mustache.render(contextTpl, {}),
     });
     const runtimeTpl = readFileSync(
@@ -44,6 +45,7 @@ export default (api: IApi) => {
     );
     api.writeTmpFile({
       path: `${DIR_NAME}/runtime.tsx`,
+      noPluginDir: true,
       content: Mustache.render(runtimeTpl, {
         keepalive: configStringify(api.userConfig.keepalive as KeepAliveType),
       }),

@@ -1,5 +1,5 @@
-import { Button as AntdButton } from 'antd-mobile';
-import { Button } from 'antd-mobile5';
+import { Button, Slider } from 'antd-mobile';
+import { Button as AntdButton } from 'antd-mobile-v2';
 import React from 'react';
 import './global.less';
 // @ts-ignore
@@ -9,9 +9,10 @@ export default function HomePage() {
   return (
     <div className={styles.title}>
       123
-      <Button type="button" color="primary" fill="solid" block>
+      <Button type="button" color="primary" fill="solid" block size="large">
         123
       </Button>
+      <Slider />
       <AntdButton>123</AntdButton>
     </div>
   );

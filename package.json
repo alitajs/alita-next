@@ -22,6 +22,7 @@
     "umi": "link:/Users/congxiaochen/Documents/umi-next/packages/umi",
     "alita": "workspace:*",
     "esno": "^0.10.1",
+    "husky": "^7.0.4",
     "jest": "^27.3.1",
     "lerna": "^4.0.0",
     "resolve": "^1.20.0",

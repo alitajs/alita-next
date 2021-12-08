@@ -1,7 +1,6 @@
 export default {
   keepalive: [/users/],
-  antdMobile5: true,
-  antdMobile: true,
+  hd: {},
   mfsu: {
     esbuild: false,
   },

@@ -52,6 +52,7 @@ export default (api: IApi) => {
       );
       api.writeTmpFile({
         path: `${DIR_NAME}/hd.tsx`,
+        noPluginDir: true,
         content: Mustache.render(hdTpl, {}),
       });
     },
