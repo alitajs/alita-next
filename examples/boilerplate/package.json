@@ -4,6 +4,7 @@
     "plugin": "alita plugin list"
   },
   "dependencies": {
-    "@alita/plugins": "workspace:*"
+    "@alita/plugins": "workspace:*",
+    "@alita/request": "workspace:*"
   }
 }

@@ -12,6 +12,7 @@ export default (api: IApi) => {
       require.resolve('./hd'),
       require.resolve('./keepalive'),
       require.resolve('./mainpath'),
+      require.resolve('./request'),
     ],
   };
 };
