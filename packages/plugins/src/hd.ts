@@ -1,14 +1,14 @@
 import { logger, Mustache } from '@umijs/utils';
+import { AlitaApi } from 'alita';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { IApi } from 'umi';
 // @ts-ignore
 import px2rem from '../compiled/@alitajs/postcss-plugin-px2rem';
 import getFile from './utils/getFile/getFile';
 
 const DIR_NAME = 'plugin-hd';
 
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   logger.info('Using HD Plugin');
 
   api.describe({

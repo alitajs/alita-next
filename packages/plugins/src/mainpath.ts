@@ -1,8 +1,8 @@
 import { logger } from '@umijs/utils';
-import { IApi } from 'umi';
+import { AlitaApi } from 'alita';
 // import resetMainPath from './utils/resetMainPath/resetMainPath';
 
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   logger.info('Using Main Path Plugin');
 
   api.describe({

@@ -7,8 +7,8 @@ export default (api: IApi) => {
   return {
     plugins: [
       require.resolve('./features/config/config'),
-      require.resolve('./features/config/apptype'),
-      require.resolve('./commands/version'),
+      require.resolve('./features/apptype'),
+      require.resolve('./features/umiExports'),
     ],
   };
 };

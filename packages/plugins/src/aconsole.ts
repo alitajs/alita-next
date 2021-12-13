@@ -1,11 +1,11 @@
 import { logger, Mustache, winPath } from '@umijs/utils';
+import { AlitaApi } from 'alita';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
-import { IApi } from 'umi';
 
 const DIR_NAME = 'plugin-inspx';
 
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   logger.info('Using AConsole Plugin');
 
   const { userConfig } = api;

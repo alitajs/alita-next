@@ -5,6 +5,6 @@
   },
   "dependencies": {
     "@alita/plugins": "workspace:*",
-    "@alita/request": "workspace:*"
+    "alita": "workspace:*"
   }
 }

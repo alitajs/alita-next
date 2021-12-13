@@ -1,7 +1,7 @@
 import { logger } from '@umijs/utils';
-import type { IApi } from 'umi';
+import type { AlitaApi } from 'alita';
 
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   api.onStart(() => {
     logger.event('alita plugins dev presets');
   });

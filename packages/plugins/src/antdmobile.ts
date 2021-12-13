@@ -1,9 +1,9 @@
 import { logger, resolve, winPath } from '@umijs/utils';
+import { AlitaApi } from 'alita';
 import { dirname, join } from 'path';
 import semver from 'semver';
-import { IApi } from 'umi';
 
-const checkAntdMobile = (api: IApi) => {
+const checkAntdMobile = (api: AlitaApi) => {
   if (
     // @ts-ignore
     (api.pkg.dependencies && api.pkg.dependencies['antd-mobile']) ||
@@ -32,7 +32,7 @@ const checkAntdMobile = (api: IApi) => {
  * plugin-antd-mobile 中增加用户项目中自己安装的 antd-mobile 版本号判断，如果是 v2 的，那么为用户配置 babel-plugin-import
  * (为了满足 antd-mobile 2 到 5 的过渡，更改此插件之前请先仔细阅读上述需求)
  */
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   logger.info('Using Antd Mobile Plugin');
 
   api.describe({

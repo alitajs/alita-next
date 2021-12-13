@@ -1,4 +1,4 @@
-import { useRequest } from '@alita/request';
+import { useRequest } from 'alita';
 import { Button, Slider } from 'antd-mobile';
 import { Button as AntdButton } from 'antd-mobile-v2';
 import React from 'react';

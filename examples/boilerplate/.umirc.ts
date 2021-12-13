@@ -1,9 +1,7 @@
 export default {
   keepalive: [/users/],
   hd: {},
-  mfsu: {
-    esbuild: false,
-  },
+  mfsu: false,
   request: {
     prefix: '/api',
     method: 'get',

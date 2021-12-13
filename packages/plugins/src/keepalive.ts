@@ -1,7 +1,7 @@
 import { logger, Mustache } from '@umijs/utils';
+import { AlitaApi } from 'alita';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { IApi } from 'umi';
 
 const DIR_NAME = 'plugin-keepalive';
 // keepalive:['route path','route path']
@@ -9,7 +9,7 @@ const DIR_NAME = 'plugin-keepalive';
 // const { dropByCacheKey } = React.useContext<any>(KeepAliveContext);
 // dropByCacheKey('/list');
 type KeepAliveType = (string | RegExp)[];
-export default (api: IApi) => {
+export default (api: AlitaApi) => {
   logger.info('Using KeepAlive Plugin');
 
   api.describe({
